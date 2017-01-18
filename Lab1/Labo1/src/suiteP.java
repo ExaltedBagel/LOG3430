@@ -26,29 +26,30 @@ public class suiteP
 			this.tailleMax = tailleMax;
 			
 			//On règle les premières valeurs de la pile
-			Noeud prem = new Noeud(valP);
-			taille++;
-			
-			Noeud deux = new Noeud(valI);
-			deux.setNext(prem);
-			taille++;
+			empiler(valP);
+
+			empiler(valI);
 			
 			//On applique les opérations à la pile pour continuer de la garnir.
 			if(op.compareTo("addition") == 0)
 			{
-				
+				while(taille < tailleMax)
+					Ops.add((int)tete.getNext().getVal(), (int)tete.getVal(), this);
 			}
 			else if(op.compareTo("soustraction") == 0)
 			{
-				
+				while(taille < tailleMax)
+					Ops.sub((int)tete.getNext().getVal(), (int)tete.getVal(), this);
 			}
 			else if(op.compareTo("multiplication") == 0)
 			{
-				
+				while(taille < tailleMax)
+					Ops.mult((int)tete.getNext().getVal(), (int)tete.getVal(), this);
 			}
 			else if (op.compareTo("division") == 0)
 			{
-				
+				while(taille < tailleMax)
+					Ops.div((int)tete.getNext().getVal(), (int)tete.getVal(), this);
 			}
 		}
 	}
@@ -111,6 +112,20 @@ public class suiteP
 		taille = 0;
 	}
 	
+	// Imprime les noeuds
+	public void print()
+	{
+		System.out.println("Etat de la pile:");
+		Noeud tempTete = tete;
+		while(tete != null)
+		{
+			System.out.println(tete.getVal());
+			tete = tete.getNext();
+		}
+		System.out.println();
+		tete = tempTete;
+	}
+	
 	//Classe représentant une valeur de la pile
 	private class Noeud
 	{
@@ -143,4 +158,5 @@ public class suiteP
 			return prochainNoeud;
 		}
 	}
+	
 }
