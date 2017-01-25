@@ -3,6 +3,7 @@ public class Ops implements IOps {
 
 	public int add(int x, int y)
 	{
+		
 		// Code pris dans les directives du tp 1
 		int result = x;
 		if (y > 0) {
@@ -15,6 +16,13 @@ public class Ops implements IOps {
 				result--;
 			}
 		}
+		
+		if(x > 0 && y > 0 && result < 0)
+			throw new ArithmeticException();
+		
+		if(x < 0 && y < 0 && result > 0)
+			throw new ArithmeticException();
+		
 		return result;
 	}
 	
@@ -32,6 +40,13 @@ public class Ops implements IOps {
 				result++;
 			}
 		}
+		
+		if(x > 0 && y < 0 && result < 0)
+			throw new ArithmeticException();
+		
+		if(x < 0 && y > 0 && result > 0)
+			throw new ArithmeticException();
+		
 		return result;
 	}
 	
@@ -86,6 +101,19 @@ public class Ops implements IOps {
 				}
 			}
 		}
+		
+		
+		if(x > 0 && y > 0 && result < 0)
+			throw new ArithmeticException();
+		
+		if(x < 0 && y < 0 && result < 0)
+			throw new ArithmeticException();
+		
+		if(x > 0 && y < 0 && result > 0)
+			throw new ArithmeticException();
+		
+		if(x < 0 && y > 0 && result > 0)
+			throw new ArithmeticException();
 		
 		return result;
 	}
@@ -154,7 +182,7 @@ public class Ops implements IOps {
 		}
 		else if(y == 0)
 		{
-			System.out.println("Dvision par 0");	
+			throw new ArithmeticException();	
 		}
 		
 		return iters;	

@@ -38,23 +38,63 @@ public class suiteP implements IsuiteP
 			if(op.compareTo("addition") == 0)
 			{
 				while(taille < tailleMax)
-					empiler(ops.add((int)tete.getNext().getVal(), (int)tete.getVal()));
-					
+				{
+					try
+					{
+						empiler(ops.add((int)tete.getNext().getVal(), (int)tete.getVal()));
+					}
+					catch(ArithmeticException e)
+					{
+						System.out.println("Débordement de l'entier! Fin prématuré de la pile.");
+						break;
+					}
+				}
 			}
 			else if(op.compareTo("soustraction") == 0)
 			{
 				while(taille < tailleMax)
-					empiler(ops.sub((int)tete.getNext().getVal(), (int)tete.getVal()));
+				{
+					try
+					{
+						empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
+					}
+						catch(ArithmeticException e)
+					{
+						System.out.println("Débordementd de l'entier! Fin prématuré de la pile.");
+						break;
+					}
+				}
 			}
 			else if(op.compareTo("multiplication") == 0)
 			{
 				while(taille < tailleMax)
-					empiler(ops.mult((int)tete.getNext().getVal(), (int)tete.getVal()));
+				{
+					try
+					{
+						empiler(ops.mult((int)tete.getNext().getVal(), (int)tete.getVal()));
+					}
+					catch(ArithmeticException e)
+					{
+						System.out.println("Débordementm de l'entier! Fin prématuré de la pile.");
+						break;
+					}
+				}
 			}
 			else if (op.compareTo("division") == 0)
 			{
 				while(taille < tailleMax)
-					empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
+				{
+					try
+					{
+						empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
+					}
+					catch(ArithmeticException e)
+					{
+						System.out.println("Division par 0! Fin prématuré de la pile.");
+						break;
+					}
+			
+				}
 			}
 		}
 	}
