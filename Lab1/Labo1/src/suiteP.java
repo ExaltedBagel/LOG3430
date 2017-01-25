@@ -1,15 +1,19 @@
 
-public class suiteP
+public class suiteP implements IsuiteP
 {
+	//
 	Noeud tete;
 	int taille;
 	int tailleMax;
+	Ops ops;
 	
 	//Constructeur de la suite
 	public suiteP(String op, int valP, int valI, int tailleMax)
 	{
 		tete = null;
 		taille = 0;
+		ops = new Ops();
+		
 		//Vérifie si la suite est légale
 		if(tailleMax > 10 || tailleMax <2)
 			System.out.println("Taille maximale illégale, doit être entre 2 et 10 inclusif");
@@ -34,22 +38,23 @@ public class suiteP
 			if(op.compareTo("addition") == 0)
 			{
 				while(taille < tailleMax)
-					Ops.add((int)tete.getNext().getVal(), (int)tete.getVal(), this);
+					empiler(ops.add((int)tete.getNext().getVal(), (int)tete.getVal()));
+					
 			}
 			else if(op.compareTo("soustraction") == 0)
 			{
 				while(taille < tailleMax)
-					Ops.sub((int)tete.getNext().getVal(), (int)tete.getVal(), this);
+					empiler(ops.sub((int)tete.getNext().getVal(), (int)tete.getVal()));
 			}
 			else if(op.compareTo("multiplication") == 0)
 			{
 				while(taille < tailleMax)
-					Ops.mult((int)tete.getNext().getVal(), (int)tete.getVal(), this);
+					empiler(ops.mult((int)tete.getNext().getVal(), (int)tete.getVal()));
 			}
 			else if (op.compareTo("division") == 0)
 			{
 				while(taille < tailleMax)
-					Ops.div((int)tete.getNext().getVal(), (int)tete.getVal(), this);
+					empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
 			}
 		}
 	}

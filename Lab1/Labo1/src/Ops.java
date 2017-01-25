@@ -1,7 +1,7 @@
 
-public class Ops {
+public class Ops implements IOps {
 
-	public static void add(int x, int y, suiteP pile)
+	public int add(int x, int y)
 	{
 		// Code pris dans les directives du tp 1
 		int result = x;
@@ -15,10 +15,10 @@ public class Ops {
 				result--;
 			}
 		}
-		pile.empiler(new Integer(result));
+		return result;
 	}
 	
-	public static void sub(int x, int y, suiteP pile)
+	public int sub(int x, int y)
 	{
 		// Code pris dans les directives du tp 1
 		int result = x;
@@ -32,10 +32,10 @@ public class Ops {
 				result++;
 			}
 		}
-		pile.empiler(new Integer(result));
+		return result;
 	}
 	
-	public static void mult(int x, int y, suiteP pile)
+	public int mult(int x, int y)
 	{
 		int result = 0;
 		
@@ -87,10 +87,10 @@ public class Ops {
 			}
 		}
 		
-		pile.empiler(new Integer(result));
+		return result;
 	}
 	
-	public static void div(int x, int y, suiteP pile)
+	public int div(int x, int y)
 	{	
 		int iters = 0;
 		
@@ -157,7 +157,6 @@ public class Ops {
 			System.out.println("Dvision par 0");	
 		}
 		
-		pile.empiler(new Integer(iters));
-		
+		return iters;	
 	}
 }
