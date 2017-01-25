@@ -1,5 +1,5 @@
 
-public class suiteP implements IsuiteP
+public class suiteP implements Pile
 {
 	//
 	Noeud tete;
@@ -171,38 +171,4 @@ public class suiteP implements IsuiteP
 		System.out.println();
 		tete = tempTete;
 	}
-	
-	//Classe représentant une valeur de la pile
-	private class Noeud
-	{
-		Object valeur;
-		Noeud prochainNoeud;
-		
-		public Noeud(Object val)
-		{
-			valeur = val;
-			prochainNoeud = null;
-		}
-		
-		public Object getVal()
-		{
-			return valeur;
-		}
-		
-		public void setVal(Object item)
-		{
-			valeur = item;
-		}
-		
-		public void setNext(Noeud proch)
-		{
-			prochainNoeud = proch;
-		}
-		
-		public Noeud getNext()
-		{
-			return prochainNoeud;
-		}
-	}
-	
 }
