@@ -19,6 +19,7 @@ public class Ops implements IOps {
 			}
 		}
 		
+		// Vérification de débordement
 		if(x > 0 && y > 0 && result < 0)
 			throw new ArithmeticException();
 		
@@ -45,6 +46,7 @@ public class Ops implements IOps {
 			}
 		}
 		
+		// Vérification de débordement
 		if(x > 0 && y < 0 && result < 0)
 			throw new ArithmeticException();
 		
@@ -59,6 +61,7 @@ public class Ops implements IOps {
 	{
 		int result = 0;
 		int tempX = x;
+		
 		if(x > 0 && y > 0)
 		{
 			while(tempX-- != 0)
@@ -68,6 +71,7 @@ public class Ops implements IOps {
 				{
 					result++;
 				}
+				// Vérification de débordement
 				if(result < 0)
 					throw new ArithmeticException();
 			}
@@ -82,6 +86,7 @@ public class Ops implements IOps {
 				{
 					result++;
 				}
+				// Vérification de débordement
 				if(result < 0)
 					throw new ArithmeticException();
 			}
@@ -96,6 +101,7 @@ public class Ops implements IOps {
 				{
 					result--;
 				}
+				// Vérification de débordement
 				if(result > 0)
 					throw new ArithmeticException();
 			}
@@ -110,6 +116,7 @@ public class Ops implements IOps {
 				{
 					result--;
 				}
+				// Vérification de débordement
 				if(result > 0)
 					throw new ArithmeticException();
 			}
@@ -181,6 +188,7 @@ public class Ops implements IOps {
 			}
 			iters++;
 		}
+		// Vérification de division par 0
 		else if(y == 0)
 		{
 			throw new ArithmeticException();	
