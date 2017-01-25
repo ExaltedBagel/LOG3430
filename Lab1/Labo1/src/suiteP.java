@@ -41,7 +41,8 @@ public class suiteP implements IsuiteP
 				{
 					try
 					{
-						empiler(ops.add((int)tete.getNext().getVal(), (int)tete.getVal()));
+						int result = ops.add((int)tete.getNext().getVal(), (int)tete.getVal());
+						empiler(result);
 					}
 					catch(ArithmeticException e)
 					{
@@ -56,11 +57,11 @@ public class suiteP implements IsuiteP
 				{
 					try
 					{
-						empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
+						empiler(ops.sub((int)tete.getNext().getVal(), (int)tete.getVal()));
 					}
 						catch(ArithmeticException e)
 					{
-						System.out.println("Débordementd de l'entier! Fin prématuré de la pile.");
+						System.out.println("Débordement de l'entier! Fin prématuré de la pile.");
 						break;
 					}
 				}
@@ -75,7 +76,7 @@ public class suiteP implements IsuiteP
 					}
 					catch(ArithmeticException e)
 					{
-						System.out.println("Débordementm de l'entier! Fin prématuré de la pile.");
+						System.out.println("Débordement de l'entier! Fin prématuré de la pile.");
 						break;
 					}
 				}
