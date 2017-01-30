@@ -1,5 +1,5 @@
 
-public class suiteP implements IsuiteP
+public class suiteP implements Pile
 {
 	//
 	Noeud tete;
@@ -41,7 +41,8 @@ public class suiteP implements IsuiteP
 				{
 					try
 					{
-						empiler(ops.add((int)tete.getNext().getVal(), (int)tete.getVal()));
+						int result = ops.add((int)tete.getNext().getVal(), (int)tete.getVal());
+						empiler(result);
 					}
 					catch(ArithmeticException e)
 					{
@@ -56,11 +57,11 @@ public class suiteP implements IsuiteP
 				{
 					try
 					{
-						empiler(ops.div((int)tete.getNext().getVal(), (int)tete.getVal()));
+						empiler(ops.sub((int)tete.getNext().getVal(), (int)tete.getVal()));
 					}
 						catch(ArithmeticException e)
 					{
-						System.out.println("Débordementd de l'entier! Fin prématuré de la pile.");
+						System.out.println("Débordement de l'entier! Fin prématuré de la pile.");
 						break;
 					}
 				}
@@ -75,7 +76,7 @@ public class suiteP implements IsuiteP
 					}
 					catch(ArithmeticException e)
 					{
-						System.out.println("Débordementm de l'entier! Fin prématuré de la pile.");
+						System.out.println("Débordement de l'entier! Fin prématuré de la pile.");
 						break;
 					}
 				}
@@ -170,38 +171,4 @@ public class suiteP implements IsuiteP
 		System.out.println();
 		tete = tempTete;
 	}
-	
-	//Classe représentant une valeur de la pile
-	private class Noeud
-	{
-		Object valeur;
-		Noeud prochainNoeud;
-		
-		public Noeud(Object val)
-		{
-			valeur = val;
-			prochainNoeud = null;
-		}
-		
-		public Object getVal()
-		{
-			return valeur;
-		}
-		
-		public void setVal(Object item)
-		{
-			valeur = item;
-		}
-		
-		public void setNext(Noeud proch)
-		{
-			prochainNoeud = proch;
-		}
-		
-		public Noeud getNext()
-		{
-			return prochainNoeud;
-		}
-	}
-	
 }
