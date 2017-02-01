@@ -86,7 +86,7 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   try{
 				   pile.empiler(myCalculator.divide((int)val1tmp,(int)val2tmp));
 			   }catch(ArithmeticException e){
-				   System.out.print( "Pile:"); printPile(pile);
+				   //System.out.print( "Pile:"); printPile(pile);
 				   System.out.println( "\nle reste de la pile ne peut etre calculer a cause de la division par zero");
 					return pile;
 			   }
@@ -98,7 +98,7 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   break;
 		}
 		
-		System.out.print( "Pile:"); printPile(pile);
+		//System.out.print( "Pile:"); printPile(pile);
 		return pile;
 		
 }
