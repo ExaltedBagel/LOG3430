@@ -7,6 +7,16 @@ import org.junit.Test;
 import pile.PileImpl;
 import home.SuitePImpl;
 
+/****************************************************/
+/* Les tests sont nommés de la manière suivante:	*/
+/*													*/
+/* testSuitePECx: correspond au test de la suite EC	*/
+/*				  de numéro x						*/
+/*													*/
+/* testSuitePACx: correspond au test de la suite AC	*/
+/*				  de numéro x						*/
+/****************************************************/
+
 public class SuitePImplTest {
 
 	@Test
