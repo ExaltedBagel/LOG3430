@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>SuitePImplTestAC.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SuitePImplTestEC2_100 (24-Feb-2017 1:39:06 PM)</a> &gt; <a href="../../index.html" class="el_group">LOG3430_TP3</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">home</a> &gt; <span class="el_source">SuitePImplTestAC.java</span></div><h1>SuitePImplTestAC.java</h1><pre class="source lang-java linenums">package home;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import pile.PileImpl;
+
+<span class="nc" id="L9">public class SuitePImplTestAC {</span>
+
+	@Test
+	public void testSuitePAC1() 
+	{
+<span class="nc" id="L14">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L15">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, -2, -3, 2);</span>
+<span class="nc" id="L16">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L17">		assertEquals(&quot;La valeur [2] devrait être -1&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L18">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());	</span>
+<span class="nc" id="L19">	}</span>
+	
+	@Test
+	public void testSuitePAC2() 
+	{
+<span class="nc" id="L24">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L25">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, -2, 5, 3);</span>
+<span class="nc" id="L26">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L27">		assertEquals(&quot;La valeur [3] devrait être 3&quot;, 3, (int)pile.depiler());</span>
+<span class="nc" id="L28">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L29">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L30">	}</span>
+	
+	@Test
+	public void testSuitePAC3() 
+	{
+<span class="nc" id="L35">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L36">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 0, -3, 4);</span>
+<span class="nc" id="L37">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L38">		assertEquals(&quot;La valeur [4] devrait être -6&quot;, -6, (int)pile.depiler());</span>
+<span class="nc" id="L39">		assertEquals(&quot;La valeur [3] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L40">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L41">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L42">	}</span>
+	
+	@Test
+	public void testSuitePAC4() 
+	{
+<span class="nc" id="L47">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L48">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 0, 5, 5);</span>
+<span class="nc" id="L49">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L50">		assertEquals(&quot;La valeur [5] devrait être 15&quot;, 15, (int)pile.depiler());</span>
+<span class="nc" id="L51">		assertEquals(&quot;La valeur [4] devrait être 10&quot;, 10, (int)pile.depiler());</span>
+<span class="nc" id="L52">		assertEquals(&quot;La valeur [3] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L53">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L54">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L55">	}</span>
+		
+	@Test
+	public void testSuitePAC5() 
+	{
+<span class="nc" id="L60">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L61">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 4, -3, 2);</span>
+<span class="nc" id="L62">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L63">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L64">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L65">	}</span>
+		
+	@Test
+	public void testSuitePAC6() 
+	{
+<span class="nc" id="L70">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L71">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 4, 5, 3);</span>
+<span class="nc" id="L72">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L73">		assertEquals(&quot;La valeur [3] devrait être 9&quot;, 9, (int)pile.depiler());</span>
+<span class="nc" id="L74">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L75">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L76">	}</span>
+	
+	@Test
+	public void testSuitePAC7() 
+	{
+<span class="nc" id="L81">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L82">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, -2, -3, 4);</span>
+<span class="nc" id="L83">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L84">		assertEquals(&quot;La valeur [4] devrait être -4&quot;, -4, (int)pile.depiler());</span>
+<span class="nc" id="L85">		assertEquals(&quot;La valeur [3] devrait être 1&quot;, 1, (int)pile.depiler());</span>
+<span class="nc" id="L86">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L87">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L88">	}</span>
+	
+	@Test
+	public void testSuitePAC8() 
+	{
+<span class="nc" id="L93">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L94">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, -2, 5, 5);</span>
+<span class="nc" id="L95">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L96">		assertEquals(&quot;La valeur [5] devrait être -19&quot;, -19, (int)pile.depiler());</span>
+<span class="nc" id="L97">		assertEquals(&quot;La valeur [4] devrait être 12&quot;, 12, (int)pile.depiler());</span>
+<span class="nc" id="L98">		assertEquals(&quot;La valeur [3] devrait être -7&quot;, -7, (int)pile.depiler());</span>
+<span class="nc" id="L99">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L100">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L101">	}</span>
+	
+	@Test
+	public void testSuitePAC9() 
+	{
+<span class="nc" id="L106">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L107">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, 0, -3, 2);</span>
+<span class="nc" id="L108">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L109">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L110">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L111">	}</span>
+	
+	@Test
+	public void testSuitePAC10() 
+	{
+<span class="nc" id="L116">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L117">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, 0, 5, 3);</span>
+<span class="nc" id="L118">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L119">		assertEquals(&quot;La valeur [3] devrait être -5&quot;, -5, (int)pile.depiler());</span>
+<span class="nc" id="L120">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L121">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L122">	}</span>
+	
+	@Test
+	public void testSuitePAC11() 
+	{
+<span class="nc" id="L127">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L128">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, 4, -3, 4);</span>
+<span class="nc" id="L129">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L130">		assertEquals(&quot;La valeur [4] devrait être -10&quot;, -10, (int)pile.depiler());</span>
+<span class="nc" id="L131">		assertEquals(&quot;La valeur [3] devrait être 7&quot;, 7, (int)pile.depiler());</span>
+<span class="nc" id="L132">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L133">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L134">	}</span>
+	
+	@Test
+	public void testSuitePAC12() 
+	{
+<span class="nc" id="L139">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L140">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;, 4, 5, 5);</span>
+<span class="nc" id="L141">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L142">		assertEquals(&quot;La valeur [5] devrait être -7&quot;, -7, (int)pile.depiler());</span>
+<span class="nc" id="L143">		assertEquals(&quot;La valeur [4] devrait être 6&quot;, 6, (int)pile.depiler());</span>
+<span class="nc" id="L144">		assertEquals(&quot;La valeur [3] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L145">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L146">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L147">	}</span>
+		
+	@Test
+	public void testSuitePAC13() 
+	{
+<span class="nc" id="L152">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L153">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, -2, -3, 2);</span>
+<span class="nc" id="L154">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L155">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L156">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L157">	}</span>
+		
+	@Test
+	public void testSuitePAC14() 
+	{
+<span class="nc" id="L162">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L163">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, -2, 5, 3);</span>
+<span class="nc" id="L164">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L165">		assertEquals(&quot;La valeur [3] devrait être -10&quot;, -10, (int)pile.depiler());</span>
+<span class="nc" id="L166">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L167">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L168">	}</span>
+	
+	@Test
+	public void testSuitePAC15() 
+	{
+<span class="nc" id="L173">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L174">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, 0, -3, 4);</span>
+<span class="nc" id="L175">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L176">		assertEquals(&quot;La valeur [4] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L177">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L178">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L179">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L180">	}</span>
+		
+	@Test
+	public void testSuitePAC16() 
+	{
+<span class="nc" id="L185">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L186">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, 0, 5, 5);</span>
+<span class="nc" id="L187">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L188">		assertEquals(&quot;La valeur [5] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L189">		assertEquals(&quot;La valeur [4] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L190">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L191">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L192">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L193">	}</span>
+		
+	@Test
+	public void testSuitePAC17() 
+	{
+<span class="nc" id="L198">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L199">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, 4, -3, 2);</span>
+<span class="nc" id="L200">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L201">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L202">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L203">	}</span>
+	
+	@Test
+	public void testSuitePAC18() 
+	{
+<span class="nc" id="L208">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L209">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, 4, 5, 3);</span>
+<span class="nc" id="L210">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L211">		assertEquals(&quot;La valeur [3] devrait être 20&quot;, 20, (int)pile.depiler());</span>
+<span class="nc" id="L212">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L213">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());</span>
+<span class="nc" id="L214">	}</span>
+	
+	@Test
+	public void testSuitePAC19() 
+	{
+<span class="nc" id="L219">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L220">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, -2, -3, 4);		</span>
+<span class="nc" id="L221">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L222">		assertEquals(&quot;La valeur [4] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L223">		assertEquals(&quot;La valeur [3] devrait être 1&quot;, 1, (int)pile.depiler());</span>
+<span class="nc" id="L224">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L225">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());	</span>
+<span class="nc" id="L226">	}</span>
+		
+	@Test
+	public void testSuitePAC20() 
+	{
+<span class="nc" id="L231">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L232">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, -2, 5, 5);</span>
+<span class="nc" id="L233">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L234">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L235">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L236">		assertEquals(&quot;La valeur [1] devrait être -2&quot;, -2, (int)pile.depiler());</span>
+<span class="nc" id="L237">	}</span>
+	
+	@Test
+	public void testSuitePAC21() 
+	{
+<span class="nc" id="L242">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L243">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 0, -3, 2);</span>
+<span class="nc" id="L244">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L245">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L246">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());	</span>
+<span class="nc" id="L247">	}</span>
+	
+	@Test
+	public void testSuitePAC22() 
+	{
+<span class="nc" id="L252">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L253">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 0, 5, 3);</span>
+<span class="nc" id="L254">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L255">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L256">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L257">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());	</span>
+<span class="nc" id="L258">	}</span>
+	
+	@Test
+	public void testSuitePAC23() 
+	{
+<span class="nc" id="L263">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L264">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 4, -3, 4);</span>
+<span class="nc" id="L265">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L266">		assertEquals(&quot;La valeur [4] devrait être 3&quot;, 3, (int)pile.depiler());</span>
+<span class="nc" id="L267">		assertEquals(&quot;La valeur [3] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L268">		assertEquals(&quot;La valeur [2] devrait être -3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L269">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());	</span>
+<span class="nc" id="L270">	}</span>
+	
+	@Test
+	public void testSuitePAC24() 
+	{
+<span class="nc" id="L275">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L276">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 4, 5, 5);</span>
+<span class="nc" id="L277">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L278">		assertEquals(&quot;La valeur [5] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L279">		assertEquals(&quot;La valeur [4] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L280">		assertEquals(&quot;La valeur [3] devrait être 1&quot;, 1, (int)pile.depiler());</span>
+<span class="nc" id="L281">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L282">		assertEquals(&quot;La valeur [1] devrait être 4&quot;, 4, (int)pile.depiler());	</span>
+<span class="nc" id="L283">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>SuitePImplTestEC2_100 (24-Feb-2017 1:39:06 PM)</div></body></html>
