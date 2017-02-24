@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>SuitePImplTestEC2_100.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SuitePImplTestAC2_100 (24-Feb-2017 1:13:14 PM)</a> &gt; <a href="../../index.html" class="el_group">INF8215_TP3</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">home</a> &gt; <span class="el_source">SuitePImplTestEC2_100.java</span></div><h1>SuitePImplTestEC2_100.java</h1><pre class="source lang-java linenums">package home;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import pile.PileImpl;
+import home.SuitePImpl;
+
+/****************************************************/
+/* Les tests sont nommés de la manière suivante:	*/
+/*													*/
+/* testSuitePECx: correspond au test de la suite EC	*/
+/*				  de numéro x						*/
+/*													*/
+/* testSuitePACx: correspond au test de la suite AC	*/
+/*				  de numéro x						*/
+/****************************************************/
+
+<span class="nc" id="L20">public class SuitePImplTestEC2_100 {</span>
+
+	@Test
+	public void testSuitePEC1() 
+	{
+<span class="nc" id="L25">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L26">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 2, -1, 4);</span>
+<span class="nc" id="L27">		assertEquals(&quot;La taille de la pile devrait être 4&quot;, 4, pile.getSize());</span>
+<span class="nc" id="L28">		assertEquals(&quot;La valeur [4] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L29">		assertEquals(&quot;La valeur [3] devrait être 1&quot;, 1, (int)pile.depiler());</span>
+<span class="nc" id="L30">		assertEquals(&quot;La valeur [2] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L31">		assertEquals(&quot;La valeur [1] devrait être 2&quot;, 2, (int)pile.depiler());</span>
+<span class="nc" id="L32">	}</span>
+	
+	@Test
+	public void testSuitePEC2() 
+	{
+<span class="nc" id="L37">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L38">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;, 2, -1, 4);</span>
+<span class="nc" id="L39">		pile = (PileImpl)suite.build(&quot;soust&quot;, 0, 5, 5);</span>
+<span class="nc" id="L40">		assertEquals(&quot;La taille de la pile devrait être 5&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L41">		assertEquals(&quot;La valeur [5] devrait être -15&quot;, -15, (int)pile.depiler());</span>
+<span class="nc" id="L42">		assertEquals(&quot;La valeur [4] devrait être 10&quot;, 10, (int)pile.depiler());</span>
+<span class="nc" id="L43">		assertEquals(&quot;La valeur [3] devrait être -5&quot;, -5, (int)pile.depiler());</span>
+<span class="nc" id="L44">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L45">		assertEquals(&quot;La valeur [1] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L46">	}</span>
+	
+	@Test
+	public void testSuitePEC3() 
+	{
+<span class="nc" id="L51">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L52">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, -10, 5, 3);</span>
+<span class="nc" id="L53">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L54">		assertEquals(&quot;La valeur [3] devrait être -50&quot;, -50, (int)pile.depiler());</span>
+<span class="nc" id="L55">		assertEquals(&quot;La valeur [2] devrait être 5&quot;, 5, (int)pile.depiler());</span>
+<span class="nc" id="L56">		assertEquals(&quot;La valeur [1] devrait être -10&quot;, -10, (int)pile.depiler());</span>
+<span class="nc" id="L57">	}</span>
+	
+	@Test
+	public void testSuitePEC4() 
+	{
+<span class="nc" id="L62">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L63">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 7, 3);</span>
+<span class="nc" id="L64">		assertEquals(&quot;La taille de la pile devrait être 3&quot;, 3, pile.getSize());</span>
+<span class="nc" id="L65">		assertEquals(&quot;La valeur [3] devrait être 2&quot;, 2, (int)pile.depiler());</span>
+<span class="nc" id="L66">		assertEquals(&quot;La valeur [2] devrait être 7&quot;, 7, (int)pile.depiler());</span>
+<span class="nc" id="L67">		assertEquals(&quot;La valeur [1] devrait être 14&quot;, 14, (int)pile.depiler());	</span>
+<span class="nc" id="L68">	}	</span>
+	
+	///ajouter
+	@Test
+	public void testSuitePEC5() 
+	{
+<span class="nc" id="L74">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L75">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 7, 11);</span>
+<span class="nc" id="L76">		assertEquals(&quot;taille chaine doit etre inferieur/egal a 10&quot;, 0, pile.getSize());</span>
+<span class="nc" id="L77">	}	</span>
+	
+	@Test
+	public void testSuitePEC6() 
+	{
+<span class="nc" id="L82">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L83">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 13, 7, 3);</span>
+<span class="nc" id="L84">		assertEquals(&quot;deuxieme parametre de suiteP doit etre paire&quot;, 0, pile.getSize());</span>
+<span class="nc" id="L85">	}	</span>
+	
+	@Test
+	public void testSuitePEC7() 
+	{
+<span class="nc" id="L90">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L91">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 6, 3);</span>
+<span class="nc" id="L92">		assertEquals(&quot;deuxieme parametre de suiteP doit etre impaire&quot;, 0, pile.getSize());</span>
+<span class="nc" id="L93">	}	</span>
+		
+	@Test
+	public void testSuitePEC8() 
+	{
+<span class="nc" id="L98">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L99">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 7, 3);</span>
+<span class="nc" id="L100">		suite.printPile(pile);</span>
+<span class="nc" id="L101">		assertEquals(&quot;print devrait vider la pile&quot;, 0, pile.getSize());</span>
+<span class="nc" id="L102">	}	</span>
+	
+	@Test
+	public void testSuitePEC9() 
+	{
+<span class="nc" id="L107">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L108">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 13, 6);</span>
+<span class="nc" id="L109">		assertEquals(&quot;le reste de la pile ne peut etre calculer a cause de la division par zero&quot;, 5, pile.getSize());</span>
+<span class="nc" id="L110">	}</span>
+	
+	@Test
+	public void testSuitePEC10() 
+	{
+<span class="nc" id="L115">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L116">		PileImpl pile = (PileImpl)suite.build(&quot;Syskey&quot;, 14, 13, 6);</span>
+<span class="nc" id="L117">		assertEquals(&quot;La taille de la pile devrait être 2&quot;, 2, pile.getSize());</span>
+<span class="nc" id="L118">	}</span>
+	@Test
+	public void testSuitePEC11() 
+	{
+<span class="nc" id="L122">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L123">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, 13, 0);</span>
+<span class="nc" id="L124">		assertEquals(&quot;La taille de la pile devrait être 0&quot;, 0, pile.getSize());</span>
+<span class="nc" id="L125">	}</span>
+	
+	@Test						
+	public void testSuitePEC12() 
+	{
+<span class="nc" id="L130">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L131">		PileImpl pile = (PileImpl)suite.build(&quot;mult&quot;, 14, -1, 3);</span>
+<span class="nc" id="L132">		assertEquals(&quot;La valeur [3] devrait être -14&quot;, -14, (int)pile.depiler());</span>
+<span class="nc" id="L133">		assertEquals(&quot;La valeur [2] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L134">		assertEquals(&quot;La valeur [1] devrait être 14&quot;, 14, (int)pile.depiler());</span>
+<span class="nc" id="L135">	}</span>
+	
+	@Test						
+	public void testSuitePEC13() 
+	{
+<span class="nc" id="L140">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L141">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, -14, -1, 3);</span>
+<span class="nc" id="L142">		assertEquals(&quot;La valeur [3] devrait être -14&quot;, 14, (int)pile.depiler());</span>
+<span class="nc" id="L143">		assertEquals(&quot;La valeur [2] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L144">		assertEquals(&quot;La valeur [1] devrait être 14&quot;, -14, (int)pile.depiler());</span>
+<span class="nc" id="L145">	}</span>
+	
+	@Test						
+	public void testSuitePEC14() 
+	{
+<span class="nc" id="L150">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L151">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 14, -1, 3);</span>
+<span class="nc" id="L152">		assertEquals(&quot;La valeur [3] devrait être -14&quot;, -14, (int)pile.depiler());</span>
+<span class="nc" id="L153">		assertEquals(&quot;La valeur [2] devrait être -1&quot;, -1, (int)pile.depiler());</span>
+<span class="nc" id="L154">		assertEquals(&quot;La valeur [1] devrait être 14&quot;, 14, (int)pile.depiler());</span>
+<span class="nc" id="L155">	}</span>
+	
+	@Test						
+	public void testSuitePEC15() 
+	{
+<span class="nc" id="L160">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L161">		PileImpl pile = (PileImpl)suite.build(&quot;div&quot;, 2, 3, 3);</span>
+<span class="nc" id="L162">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 1, (int)pile.depiler());</span>
+<span class="nc" id="L163">		assertEquals(&quot;La valeur [2] devrait être 3&quot;, 3, (int)pile.depiler());</span>
+<span class="nc" id="L164">		assertEquals(&quot;La valeur [1] devrait être 2&quot;, 2, (int)pile.depiler());</span>
+<span class="nc" id="L165">	}</span>
+	
+	@Test						
+	public void testSuitePEC16() 
+	{
+<span class="nc" id="L170">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L171">		PileImpl pile = (PileImpl)suite.build(&quot;add&quot;,6, -3, 5);</span>
+<span class="nc" id="L172">		assertEquals(&quot;La valeur [5] devrait être 0&quot;, 3, (int)pile.depiler());</span>
+<span class="nc" id="L173">		assertEquals(&quot;La valeur [4] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L174">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, 3, (int)pile.depiler());</span>
+<span class="nc" id="L175">		assertEquals(&quot;La valeur [2] devrait être 3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L176">		assertEquals(&quot;La valeur [1] devrait être 2&quot;, 6, (int)pile.depiler());</span>
+<span class="nc" id="L177">	}</span>
+	
+	@Test						
+	public void testSuitePEC17() 
+	{
+<span class="nc" id="L182">		SuitePImpl suite = new SuitePImpl();</span>
+<span class="nc" id="L183">		PileImpl pile = (PileImpl)suite.build(&quot;soust&quot;,-6, -3, 5);</span>
+<span class="nc" id="L184">		assertEquals(&quot;La valeur [5] devrait être 0&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L185">		assertEquals(&quot;La valeur [4] devrait être 0&quot;, 0, (int)pile.depiler());</span>
+<span class="nc" id="L186">		assertEquals(&quot;La valeur [3] devrait être 0&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L187">		assertEquals(&quot;La valeur [2] devrait être 3&quot;, -3, (int)pile.depiler());</span>
+<span class="nc" id="L188">		assertEquals(&quot;La valeur [1] devrait être 2&quot;, -6, (int)pile.depiler());</span>
+<span class="nc" id="L189">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>SuitePImplTestAC2_100 (24-Feb-2017 1:13:14 PM)</div></body></html>
