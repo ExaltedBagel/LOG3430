@@ -49,8 +49,8 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 		 
 		switch (op){
 		   case "add":while(tailleMax>0){
-			   Object val2tmp=pile.dépiler();
-			   Object val1tmp=pile.dépiler();
+			   Object val2tmp=pile.depiler();
+			   Object val1tmp=pile.depiler();
 			   pile.empiler(val1tmp);
 			   pile.empiler(val2tmp);
 			   pile.empiler(myCalculator.add((int)val1tmp,(int)val2tmp));
@@ -59,8 +59,8 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   };
 		   break;
 		   case "mult":while(tailleMax>0){
-			   Object val2tmp=pile.dépiler();
-			   Object val1tmp=pile.dépiler();
+			   Object val2tmp=pile.depiler();
+			   Object val1tmp=pile.depiler();
 			   pile.empiler(val1tmp);
 			   pile.empiler(val2tmp);
 			   pile.empiler(myCalculator.multiply((int)val1tmp,(int)val2tmp));
@@ -69,8 +69,8 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   };
 		   break;
 		   case "soust":while(tailleMax>0){
-			   Object val2tmp=pile.dépiler();
-			   Object val1tmp=pile.dépiler();
+			   Object val2tmp=pile.depiler();
+			   Object val1tmp=pile.depiler();
 			   pile.empiler(val1tmp);
 			   pile.empiler(val2tmp);
 			   pile.empiler(myCalculator.substract((int)val1tmp,(int)val2tmp));
@@ -79,8 +79,8 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   };
 		   break;
 		   case "div":while(tailleMax>0){
-			   Object val2tmp=pile.dépiler();
-			   Object val1tmp=pile.dépiler();
+			   Object val2tmp=pile.depiler();
+			   Object val1tmp=pile.depiler();
 			   pile.empiler(val1tmp);
 			   pile.empiler(val2tmp);
 			   try{
@@ -106,7 +106,7 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 public void printPile(Pile pile){
 	StringBuilder chaineContent=new StringBuilder();
 	while(pile.getSize()!=0){
-		chaineContent.insert(0, pile.dépiler()+" ");
+		chaineContent.insert(0, pile.depiler()+" ");
 	}
 	System.out.print( chaineContent.toString());
 }

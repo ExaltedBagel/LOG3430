@@ -25,7 +25,7 @@ public class PileImpl implements Pile{
 	}
 
 	@Override
-	public Object dépiler() {
+	public Object depiler() {
 		// TODO Auto-generated method stub
 		int len = items.size();
 	    Object item = null;
