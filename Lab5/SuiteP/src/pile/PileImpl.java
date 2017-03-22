@@ -61,5 +61,15 @@ public class PileImpl implements Pile{
 	    if (len == 0)
 	      throw new EmptyStackException();
 	   return items.elementAt(len - 1);
-	}   
+	} 
+	
+	public Vector<Object> getItems()
+	{
+		return items;
+	}
+	
+	public void setItems(Vector<Object> vo)
+	{
+		items = vo;
+	}
 }
