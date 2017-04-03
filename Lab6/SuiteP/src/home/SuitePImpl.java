@@ -98,7 +98,7 @@ public Pile build(String op,int valP, int valI,int tailleMax){
 			   break;
 		}
 		
-		System.out.print( "Pile:"); printPile(pile);
+		//System.out.print( "Pile:"); printPile(pile);
 		return pile;
 		
 }
