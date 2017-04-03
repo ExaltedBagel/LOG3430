@@ -11,7 +11,11 @@ import pile.PileImpl;
 
 public class PileImplTest {
 
-
+	
+	/* =================================
+	   Tester le rapporteur de la classe
+	   ================================= */
+	
 	@Test
 	public void testGetter()
 	{
@@ -28,6 +32,11 @@ public class PileImplTest {
 		assertEquals("L'item devrait etre 3", 3, testVect.get(1));
 	}
 	
+	
+	/* ===================================
+	   Tester le constructeur de la classe
+	   =================================== */
+	
 	@Test
 	public void testerConstructeur()
 	{
@@ -36,6 +45,13 @@ public class PileImplTest {
 		assertEquals("L'item devrait etre de taille 10", 10, pile.getItems().capacity());
 		assertEquals("L'item devrait etre vide", true, pile.getItems().isEmpty());
 	}
+	
+	
+	/* =====================================================================================
+	   Tester tous les transformateurs de la classe dans tous les ordres possibles
+	   On commence toujours par le constructeur et on permute les transformateurs parmis eux.
+	   Au total, on a 24 cas de test car il y a 4 transformateurs.
+	   ===================================================================================== */
 	
 	@Test(expected=EmptyStackException.class)
 	public void testTransformateur1()
@@ -805,6 +821,11 @@ public class PileImplTest {
 		assertEquals("L'item devrait etre 1", 1, pile.getItems().get(0));	
 	}
 	
+	
+	/* ===============================
+	   On test les fonctions "other". 
+	   =============================== */
+	
 	@Test
 	public void testGetSize()
 	{
@@ -839,6 +860,7 @@ public class PileImplTest {
 		assertEquals("L'item devrait etre faux", false, pile.estVide());
 	}
 	
+	// Exécution normale du getHead()
 	@Test
 	public void testGetHead1()
 	{
@@ -855,6 +877,7 @@ public class PileImplTest {
 		assertEquals("L'item devrait etre 3", 3, pile.getHead());
 	}
 	
+	// Exécution jettant une errueure de getHEad()
 	@Test(expected=EmptyStackException.class)
 	public void testGetHead2()
 	{
