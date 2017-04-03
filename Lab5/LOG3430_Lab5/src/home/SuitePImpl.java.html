@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>SuitePImpl.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PileImplTest (2-Apr-2017 8:58:36 PM)</a> &gt; <a href="../../index.html" class="el_group">LOG3430_Lab5</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">home</a> &gt; <span class="el_source">SuitePImpl.java</span></div><h1>SuitePImpl.java</h1><pre class="source lang-java linenums">package home;
+/**
+ * @class			: SuitePImpl
+ * @interface		: SuiteP
+ * @author	 		: Ons mlouki
+ * 					  Ons.mlouki@gmail.com
+ * 	
+ */
+
+import operations.Calculator;
+import operations.CalculatorImpl;
+import pile.Pile;
+import pile.PileImpl;
+
+<span class="nc" id="L15">public class SuitePImpl implements SuiteP{</span>
+	
+public Pile build(String op,int valP, int valI,int tailleMax){
+	
+<span class="nc" id="L19">	Pile pile = new PileImpl();	</span>
+				
+<span class="nc bnc" id="L21" title="All 2 branches missed.">		if (tailleMax&gt;=10)</span>
+		{
+<span class="nc" id="L23">			System.out.println(&quot;taille chaine doit etre inferieur/egal a 10&quot;);</span>
+<span class="nc" id="L24">			return pile;</span>
+		}
+		
+<span class="nc bnc" id="L27" title="All 2 branches missed.">		if ((valP%2)!=0)</span>
+		{
+<span class="nc" id="L29">			System.out.println(&quot;deuxieme parametre de suiteP doit etre paire&quot;);</span>
+<span class="nc" id="L30">			return pile;</span>
+		}
+		
+<span class="nc bnc" id="L33" title="All 2 branches missed.">		if ((valI%2)==0)</span>
+		{
+<span class="nc" id="L35">			System.out.println(&quot;deuxieme parametre de suiteP doit etre impaire&quot;);</span>
+<span class="nc" id="L36">			return pile;</span>
+		}
+		
+<span class="nc" id="L39">		Calculator myCalculator= new CalculatorImpl();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		 if(tailleMax&gt;=1){</span>
+<span class="nc" id="L41">			 pile.empiler(valP);</span>
+			   }
+<span class="nc bnc" id="L43" title="All 2 branches missed.">		 if(tailleMax&gt;=2){</span>
+<span class="nc" id="L44">			 pile.empiler(valI);</span>
+		 }
+<span class="nc" id="L46">		 tailleMax--;</span>
+<span class="nc" id="L47">		 int i=1;</span>
+<span class="nc" id="L48">		 tailleMax--;</span>
+		 
+<span class="nc bnc" id="L50" title="All 13 branches missed.">		switch (op){</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		   case &quot;add&quot;:while(tailleMax&gt;0){</span>
+<span class="nc" id="L52">			   Object val2tmp=pile.depiler();</span>
+<span class="nc" id="L53">			   Object val1tmp=pile.depiler();</span>
+<span class="nc" id="L54">			   pile.empiler(val1tmp);</span>
+<span class="nc" id="L55">			   pile.empiler(val2tmp);</span>
+<span class="nc" id="L56">			   pile.empiler(myCalculator.add((int)val1tmp,(int)val2tmp));</span>
+<span class="nc" id="L57">			   i++;</span>
+<span class="nc" id="L58">			   tailleMax--;</span>
+			   };
+<span class="nc" id="L60">		   break;</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">		   case &quot;mult&quot;:while(tailleMax&gt;0){</span>
+<span class="nc" id="L62">			   Object val2tmp=pile.depiler();</span>
+<span class="nc" id="L63">			   Object val1tmp=pile.depiler();</span>
+<span class="nc" id="L64">			   pile.empiler(val1tmp);</span>
+<span class="nc" id="L65">			   pile.empiler(val2tmp);</span>
+<span class="nc" id="L66">			   pile.empiler(myCalculator.multiply((int)val1tmp,(int)val2tmp));</span>
+<span class="nc" id="L67">			   i++;</span>
+<span class="nc" id="L68">			   tailleMax--;</span>
+			   };
+<span class="nc" id="L70">		   break;</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">		   case &quot;soust&quot;:while(tailleMax&gt;0){</span>
+<span class="nc" id="L72">			   Object val2tmp=pile.depiler();</span>
+<span class="nc" id="L73">			   Object val1tmp=pile.depiler();</span>
+<span class="nc" id="L74">			   pile.empiler(val1tmp);</span>
+<span class="nc" id="L75">			   pile.empiler(val2tmp);</span>
+<span class="nc" id="L76">			   pile.empiler(myCalculator.substract((int)val1tmp,(int)val2tmp));</span>
+<span class="nc" id="L77">			   i++;</span>
+<span class="nc" id="L78">			   tailleMax--;</span>
+			   };
+<span class="nc" id="L80">		   break;</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">		   case &quot;div&quot;:while(tailleMax&gt;0){</span>
+<span class="nc" id="L82">			   Object val2tmp=pile.depiler();</span>
+<span class="nc" id="L83">			   Object val1tmp=pile.depiler();</span>
+<span class="nc" id="L84">			   pile.empiler(val1tmp);</span>
+<span class="nc" id="L85">			   pile.empiler(val2tmp);</span>
+			   try{
+<span class="nc" id="L87">				   pile.empiler(myCalculator.divide((int)val1tmp,(int)val2tmp));</span>
+<span class="nc" id="L88">			   }catch(ArithmeticException e){</span>
+<span class="nc" id="L89">				   System.out.print( &quot;Pile:&quot;); printPile(pile);</span>
+<span class="nc" id="L90">				   System.out.println( &quot;\nle reste de la pile ne peut etre calculer a cause de la division par zero&quot;);</span>
+<span class="nc" id="L91">					return pile;</span>
+			   }
+<span class="nc" id="L93">			   i++;</span>
+<span class="nc" id="L94">			   tailleMax--;</span>
+			   };
+<span class="nc" id="L96">		   break;</span>
+<span class="nc" id="L97">		   default:System.out.println(&quot;operateur &quot;+op+&quot; non identifiÃ©&quot;);</span>
+			   break;
+		}
+		
+<span class="nc" id="L101">		System.out.print( &quot;Pile:&quot;); printPile(pile);</span>
+<span class="nc" id="L102">		return pile;</span>
+		
+}
+
+public void printPile(Pile pile){
+<span class="nc" id="L107">	StringBuilder chaineContent=new StringBuilder();</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">	while(pile.getSize()!=0){</span>
+<span class="nc" id="L109">		chaineContent.insert(0, pile.depiler()+&quot; &quot;);</span>
+	}
+<span class="nc" id="L111">	System.out.print( chaineContent.toString());</span>
+<span class="nc" id="L112">}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>PileImplTest (2-Apr-2017 8:58:36 PM)</div></body></html>
